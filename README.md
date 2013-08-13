@@ -1,0 +1,2 @@
+randomnaja.vagrant
+==================
