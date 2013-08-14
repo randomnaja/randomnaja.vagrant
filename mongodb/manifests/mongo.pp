@@ -32,7 +32,7 @@ class mongo {
         require => Class["apt"],
         command => "apt-get -y -q --force-yes install mongodb20-10gen"
     }
-    service { "mongod":
+    service { "mongodb":
         ensure => running,
         require => Exec["mongodb20-10gen"]
     }
