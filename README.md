@@ -12,6 +12,6 @@ randomnaja.vagrant
 
 * varnish
 
-    Varnish + pre-configure of __hydra__ load balancing, this module might be too specific for certain application (__hydra__)
+    Varnish + pre-configure of __hydra__ load balancing, this module might be too specific for certain application `(__hydra__`)
      but you can extend it or customize it to suit your own need
 
