@@ -32,6 +32,9 @@ class mongo {
         require => Class["apt"],
         command => "apt-get -y -q --force-yes install mongodb20-10gen"
     }
+    exec { "clean-old-lock-file":
+        command => "rm /var/lib/mongodb/mongod.lock"
+    }
     service { "mongodb":
         ensure => running,
         require => Exec["mongodb20-10gen"]
@@ -41,7 +44,8 @@ class mongo {
 class configmongo {
    exec { "set-rest-mongodb":
         require => Class["mongo"],
-        command => "echo 'rest = true' >> /etc/mongodb.conf"
+        command => "echo 'rest = true' >> /etc/mongodb.conf",
+        onlyif => [ "grep -c rest /etc/mongodb.conf" ]
    }
    exec { "restart-mongo":
         require => Class["mongo"],
