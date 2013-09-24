@@ -1,4 +1,6 @@
 class runit {
+  require addproxy
+
   package { "runit":
     ensure => present,
   }

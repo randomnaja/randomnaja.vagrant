@@ -25,6 +25,7 @@
 #   include nginx
 # }
 class nginx {
+  require addproxy
   
   class { 'stdlib': }
 

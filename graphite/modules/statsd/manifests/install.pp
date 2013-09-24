@@ -1,4 +1,6 @@
 class statsd::install {
+  require addproxy
+
   $temp_location = "/tmp/nodejs_0.8.8_i386.deb"
   file { $temp_location:
     owner => root,

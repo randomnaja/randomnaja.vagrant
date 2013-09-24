@@ -3,6 +3,8 @@ class graphite (
     $site_alias = $fqdn
   ) {
 
+  require addproxy
+
   include graphite::install
   include graphite::params
   include graphite::service

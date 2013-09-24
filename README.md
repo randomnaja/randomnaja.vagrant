@@ -19,3 +19,9 @@ randomnaja.vagrant
 	
 	To test the puppet manually
 		puppet apply --verbose --debug --modulepath '/etc/puppet/modules:/tmp/vagrant-puppet/modules-0' --detailed-exitcodes /tmp/vagrant-puppet/manifests/graphite.pp || [ $? -eq 2 ]
+
+## Notes
+
+* Optimize apt with proxy
+	
+	https://help.ubuntu.com/community/Apt-Cacher-Server
