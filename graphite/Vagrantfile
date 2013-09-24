@@ -1,0 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+  
+  config.vm.box = "debian_squeeze_32"
+  #config.vm.box_url = 'http://dl.dropbox.com/u/937870/VMs/squeeze64.box'
+  #config.vm.box_url = 'http://apdm.int.abctech-thailand.com/vagrant-box/squeeze64.box'
+  config.vm.box_url = 'http://apdm.int.abctech-thailand.com/vagrant-box/debian_squeeze_32.box'
+
+  config.vm.define :graphite do |graphite_config|
+		graphite_config.vm.network :hostonly, "10.0.51.3"
+    graphite_config.vm.provision :puppet do |puppet|
+		#graphite_config.vm.share_folder("templates", "/tmp/vagrant-puppet/templates", "templates")
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file = "graphite.pp"
+      puppet.module_path = "modules"
+      puppet.options = [
+          '--verbose', 
+          #"--templatedir", "/tmp/vagrant-puppet/templates"
+          '--debug',
+      ]
+    end
+  end
+  
+end
