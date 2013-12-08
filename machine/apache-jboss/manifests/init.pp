@@ -13,6 +13,8 @@ jboss7_1_3::download_and_setup { 'jboss-download-and-setup':
 	jbossuser => "jboss",
 }
 
+postgres::install {	'postgres-install': }
+
 # archive { 'jboss-7-1-3':
 #   ensure => present,
 #   url    => 'file:///vagrant/files/jboss-as-7.1.3.Final.tar.bz2',
