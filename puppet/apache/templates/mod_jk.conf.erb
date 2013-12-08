@@ -25,7 +25,7 @@ JkOptions +ForwardKeySize +ForwardURICompat -ForwardDirectories
 JkRequestLogFormat "%w %V %T"
 
 # Mount your applications
-<% uris.each do |uri| %>JkMount <%= uri %> <%= title %>
+<% @uris.each do |uri| %>JkMount <%= uri %> <%= @title %>
 <% end %>
 
 # You can use external file for mount points.
